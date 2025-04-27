@@ -1,25 +1,35 @@
-package com.polymorphism.prac;
+package com.encapsulation.Student;
 
 public class Student {
-	int rollno;
-	String name ;
-	public Student() {
-		System.out.println("No parameter constructor");
-	}
-	public Student(int rollno) {
-		this.rollno = rollno ; 
-		System.out.println("Roll no : "+rollno);
 	
+	private String name ;
+	private int age ; 
+	private char grade ;
+	
+	public String getName() {
+		return name;
 	}
-	public Student(int rollno, String name) {
-		this.rollno = rollno;
-		System.out.println("Roll no : "+rollno + "and Name is "+name);
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	public static void main(String[] args) {
-		Student s = new Student();
-		Student s1 = new Student(2);
-		Student s2 = new Student(3, "Adesh");
+	public int getAge() {
+		return age; 
+	}
+	public void setAge(int age) {
+		this.age = age ; 
 	}
 	
+	public char getGrade() {
+		return grade;
+	}
+	public void setGarde(char grade) {
+		this.grade = grade ; 
+	}
+	
+	
+	
+	
+	
+
 }

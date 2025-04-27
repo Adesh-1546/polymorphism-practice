@@ -1,17 +1,41 @@
-package com.polymorphism.prac;
+package com.encapsulation.BankAccount;
 
 public class BankAccount {
-	public void deposit(int amount) {
-		System.out.println("Amount"+amount);
+	private double  balance;
+	
+	public BankAccount(double balance) {
+		if (balance > 0 ) {
+			this.balance = balance;
+		}else {
+			System.out.println("Enter Positive Balance Amount");
+		}
 	}
-	public void deposit(int amount, String mode) {
-		System.out.println("Amount : "+ amount + " Mode: "+mode);
+	
+	public void withdraw(double wAmt) {
+		if (wAmt > 0 ) {
+			if (wAmt <= balance) {
+				balance = balance - wAmt ;
+				System.out.println("Remaining Balance : "+balance);
+			}else {
+				System.out.println("Insufficient Balance ");
+			}
+		}else {
+			System.out.println("Enter positive Withdrawal amount ");
+		}
+	}
+	
+	public void deposit(double dAmt) {
+		balance = balance + dAmt ;
+		System.out.println("Balance : "+balance);
 		
 	}
-	public static void main(String[] args) {
-		BankAccount b = new BankAccount();
-		b.deposit(500);
-		b.deposit(700000,"Cheque");
+
+	public double getBalance() {
+		return balance;
 	}
+
+
+	
+	
 
 }
